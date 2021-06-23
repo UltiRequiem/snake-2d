@@ -1,20 +1,23 @@
 # frozen_string_literal: true
 
-# This file represent the state of the game
-
 module Model
+  module Direction
+    UP = :up
+    RIGHT = :right
+    DOWN = :down
+    LEFT = :left
+  end
+
   Coord = Struct.new(:row, :col)
 
   class Food < Coord
   end
 
-  class Snake < Stuct.new(:positions)
-  end
+  Snake = Struct.new(:positions)
 
-  class Grid < Stuct.new(:rows, :cols)
-  end
+  Grid = Struct.new(:rows, :cols)
 
-  State = Struct.new(:sanke, :food, :grid)
+  State = Struct.new(:snake, :food, :grid, :curr_direction, :game_finished)
 
   def self.initial_state
     Model::State.new(
@@ -23,7 +26,9 @@ module Model
                          Model::Coord.new(0, 1)
                        ]),
       Model::Food.new(4, 4),
-      Model::Grid.new(8, 12)
+      Model::Grid.new(8, 12),
+      Direction::DOWN,
+      false
     )
   end
 end
