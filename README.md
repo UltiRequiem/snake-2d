@@ -1,6 +1,6 @@
 # Snake Game in 2D
 
-All course notes and exercises in
+All course notes and exercises are in
 [UltiRequiem/ruby-platzi](https://github.com/UltiRequiem/ruby-platzi).
 
 ## Required Packages
