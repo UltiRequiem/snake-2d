@@ -60,23 +60,14 @@ module View
 
     def handle_key_event(event)
       case event.key
-      when 'k'
+      when 'k', 'up'
         @app.send_action(:change_direction, Model::Direction::UP)
-      when 'j'
+      when 'j', 'down'
         @app.send_action(:change_direction, Model::Direction::DOWN)
-      when 'h'
+      when 'h', 'left'
         @app.send_action(:change_direction, Model::Direction::LEFT)
-      when 'l'
+      when 'l', 'right'
         @app.send_action(:change_direction, Model::Direction::RIGHT)
-      when 'up'
-        @app.send_action(:change_direction, Model::Direction::UP)
-      when 'down'
-        @app.send_action(:change_direction, Model::Direction::DOWN)
-      when 'left'
-        @app.send_action(:change_direction, Model::Direction::LEFT)
-      when 'right'
-        @app.send_action(:change_direction, Model::Direction::RIGHT)
-
       end
     end
   end
