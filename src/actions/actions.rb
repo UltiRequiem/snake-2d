@@ -2,7 +2,6 @@
 
 module Actions
   def self.move_snake(state)
-    next_direction = state.curr_direction
     next_position = calc_next_position(state)
     if position_is_food?(state, next_position)
       state = grow_snake_to(state, next_position)
